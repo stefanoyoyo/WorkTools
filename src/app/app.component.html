@@ -1,28 +1,9 @@
-
-<!-- Json array describing the table's columns -->
-<div id="json-input">
-<p>Json array describing the table's columns</p>
-
-<textarea id="in" (keyup)="onKey($event)" [(ngModel)]="input"></textarea>
-
+<p>Please choose the functionaliy you want </p>
+<div *ngFor="let func of functions; let i = index;">
+  <input type="radio" [(ngModel)]="selFunct" [value]="i" />
+  <label (click)="onSel(i)">{{func}}</label>
 </div>
 
-<!-- Dynamic table -->
-<!-- Header -->
-<p>Dynamic table</p>
-<table>
-  <tr>
-    <th id="th1" >Column</th>
-    <th id="th2">Description</th>
-  </tr>
 
-  <!-- Body -->
-  <tr *ngFor="let column of this.jsonValue">
-    <td>{{column['field']}}</td>
-    <td>
-      <span *ngIf="column['description'] != null && column['description'] != ''">{{column['description']}}</span>
-      <span class="alert" *ngIf="column['description'] == null || column['description'] == ''">{{noDescr}}</span>
-    </td>
-  </tr>
-
-</table>
+<app-json-dynamic-table *ngIf="selFunct === 0"></app-json-dynamic-table>
+<app-json-editor *ngIf="selFunct === 1"></app-json-editor>

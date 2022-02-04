@@ -8,14 +8,15 @@ import { Component, VERSION } from '@angular/core';
 export class AppComponent  {
   name = 'Angular ' + VERSION.major;
 
-  input = '';
-  jsonValue: object[] = [];
+  selFunct = -1;
+  functions = [ 
+    'Dynamic table based on JSON', 
+    "Json editor"
+  ];
 
-  noDescr = 'No description'
-
-  onKey(event) {
-    this.jsonValue = JSON.parse(this.input);
-    console.log(this.jsonValue)
+  onSel(event) {
+    console.log(event)
+    this.selFunct = event;
   }
 
 }

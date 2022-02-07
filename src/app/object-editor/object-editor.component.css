@@ -6,4 +6,6 @@ div.edit {
 .editpath, .change-to-apply {
   display: flex;
   flex-direction: row;
+  justify-content: space-between;
+  margin: 3px;
 }

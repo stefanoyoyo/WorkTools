@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-object-editor',
@@ -6,6 +6,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./object-editor.component.css']
 })
 export class ObjectEditorComponent implements OnInit {
+
+  @Input() input;
 
   pathToEdit = './';
   changeToApply = '';
@@ -16,6 +18,7 @@ export class ObjectEditorComponent implements OnInit {
   }
 
   onKeyUp() {
+
   }
 
 }

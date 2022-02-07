@@ -11,9 +11,9 @@
 <h6>Input here your json</h6>
 <textarea id="in" (keyup)="onKey($event)" [(ngModel)]="input"></textarea>
 
-<app-object-adder *ngIf="choosenOption === 0"></app-object-adder>
-<app-object-editor  *ngIf="choosenOption === 1"></app-object-editor>
-<app-object-deleter  *ngIf="choosenOption === 2"></app-object-deleter>
+<app-object-adder [input]="input" *ngIf="choosenOption === 0"></app-object-adder>
+<app-object-editor  [input]="input" *ngIf="choosenOption === 1"></app-object-editor>
+<app-object-deleter  [input]="input" *ngIf="choosenOption === 2"></app-object-deleter>
 
 
 <h6>Output json</h6>

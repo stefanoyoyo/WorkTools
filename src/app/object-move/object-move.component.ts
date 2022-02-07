@@ -35,7 +35,7 @@ export class ObjectMoveComponent implements OnInit {
     const keys = Object.keys(pathToEdit);
 
     /*saving the object to move */
-    const objs = getEachObject(input, keys);
+    const objs = this.getEachObject(input, keys);
 
     /*deleting the object from ech object */
 
@@ -48,11 +48,15 @@ export class ObjectMoveComponent implements OnInit {
   getEachObject(input: any, keys: string[]) {
     const objs: string[] = [];
     input.forEach((obj, index) => {
-      const obj = getObj(obj, keys);
+      const innerobj = this.getObj(obj, keys);
       objs.push(obj);
     })
 
     return objs;
+  }
+
+  getObj(obj, keys) {
+    return null;
   }
 
 }

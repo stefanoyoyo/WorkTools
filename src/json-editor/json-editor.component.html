@@ -8,3 +8,5 @@
 <p>Json array describing the table's columns</p>
 
 <textarea id="in" (keyup)="onKey($event)" [(ngModel)]="input"></textarea>
+
+<app-object-adder *ngIf="choosenOption === 0"></app-object-adder>

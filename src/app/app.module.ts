@@ -8,6 +8,7 @@ import { JsonDynamicTableComponent } from '../json-dynamic-table/json-dynamic-ta
 import { JsonEditorComponent } from '../json-editor/json-editor.component';
 import { ObjectAdderComponent } from './object-adder/object-adder.component';
 import { ObjectEditorComponent } from './object-editor/object-editor.component';
+import { ObjectDeleterComponent } from './object-deleter/object-deleter.component';
 
 @NgModule({
   imports:      [ BrowserModule, FormsModule ],
@@ -17,7 +18,8 @@ import { ObjectEditorComponent } from './object-editor/object-editor.component';
     JsonDynamicTableComponent, 
     JsonEditorComponent, 
     ObjectAdderComponent, 
-    ObjectEditorComponent
+    ObjectEditorComponent,
+    ObjectDeleterComponent
   ],
   bootstrap:    [ AppComponent ]
 })

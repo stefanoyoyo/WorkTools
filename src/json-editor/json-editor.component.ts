@@ -11,7 +11,7 @@ export class JsonEditorComponent implements OnInit {
   options = [
     'Add to each objects',
     'Delete from each objects',
-    'Move from each objects',
+    'Edit from each objects',
   ];
 
   input = '';

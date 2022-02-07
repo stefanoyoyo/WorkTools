@@ -32,10 +32,10 @@ export class ObjectMoveComponent implements OnInit {
 
   moveArray(input) {
     const pathToEdit = this.pathToEdit.replace('./', '');
-    const keys = Object.keys(pathToEdit);
+    const keys = pathToEdit.split('.');
 
     /*saving the object to move */
-    const objs = this.getEachObject(input, keys);
+    const objs: object[] = this.getEachObject(input, keys);
 
     /*deleting the object from ech object */
 
@@ -45,8 +45,8 @@ export class ObjectMoveComponent implements OnInit {
   }
 
   /**Geting an array of the object to be moved */
-  getEachObject(input: any, keys: string[]) {
-    const objs: string[] = [];
+  getEachObject(input: any, keys: string[]): object[] {
+    const objs: object[] = [];
     input.forEach((obj, index) => {
       const innerobj = this.getObj(obj, keys);
       objs.push(obj);
@@ -55,8 +55,13 @@ export class ObjectMoveComponent implements OnInit {
     return objs;
   }
 
-  getObj(obj, keys) {
-    return null;
+  getObj(obj, keys): object {
+    let res = obj;
+    keys.forEach(key => {
+      res = res[key];
+    })
+
+    return res;
   }
 
 }

@@ -7,9 +7,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ObjectEditorComponent implements OnInit {
 
+  pathToEdit = './';
+  changeToApply = '';
+
   constructor() { }
 
   ngOnInit() {
+  }
+
+  onKeyUp() {
   }
 
 }

@@ -10,7 +10,7 @@ export class ObjectMoveComponent implements OnInit {
   @Input() input;
 
   pathToEdit = './';
-  changeToApply = '';
+  changeToApply = './';
 
   constructor() { }
 

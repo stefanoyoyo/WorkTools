@@ -14,9 +14,17 @@ export class JsonEditorComponent implements OnInit {
     'Move from each objects',
   ];
 
+  input = '';
+  jsonValue: object[] = [];
+
   constructor() { }
 
   ngOnInit() {
+  }
+
+  onKey(event) {
+    this.jsonValue = JSON.parse(this.input);
+    console.log(this.jsonValue)
   }
 
 }

@@ -4,3 +4,7 @@
   <input type="radio" [value]="i" [(ngModel)]="choosenOption" />
   <label>{{options}}</label>
 </div>
+
+<p>Json array describing the table's columns</p>
+
+<textarea id="in" (keyup)="onKey($event)" [(ngModel)]="input"></textarea>

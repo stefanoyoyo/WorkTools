@@ -15,6 +15,7 @@ export class JsonEditorComponent implements OnInit {
   ];
 
   input = '';
+  output = '';
   jsonValue: object[] = [];
 
   constructor() { }

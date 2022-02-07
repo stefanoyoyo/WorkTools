@@ -7,6 +7,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class JsonEditorComponent implements OnInit {
 
+  choosenOption = -1;
+  options = [
+    'Add to each objects',
+    'Delete from each objects',
+    'Move from each objects',
+  ];
+
   constructor() { }
 
   ngOnInit() {

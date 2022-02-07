@@ -1,1 +1,6 @@
-<p>ciao</p>
+<p>Here is possibile to edit the given JSON</p>
+
+<div id="options" *ngFor="let options of this.options; let i = index;">
+  <input type="radio" [value]="i" [(ngModel)]="choosenOption" />
+  <label>{{options}}</label>
+</div>

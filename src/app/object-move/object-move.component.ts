@@ -9,9 +9,24 @@ export class ObjectMoveComponent implements OnInit {
 
   @Input() input;
 
+  pathToEdit = './';
+  changeToApply = '';
+
   constructor() { }
 
   ngOnInit() {
+  }
+  onKeyUp() {
+    const input = JSON.parse(this.input);
+    const isArray = Array.isArray(input);
+    let result = null; 
+
+    if (isArray) {
+      result = null;
+    } else {
+      result = null;
+    }
+
   }
 
 }

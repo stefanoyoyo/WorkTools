@@ -7,7 +7,7 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class ObjectMoveComponent implements OnInit {
 
-  @Input() input;
+  @Input() input = '';
 
   pathToEdit = './';
   changeToApply = './';
@@ -17,16 +17,42 @@ export class ObjectMoveComponent implements OnInit {
   ngOnInit() {
   }
   onKeyUp() {
+    console.log('fire')
     const input = JSON.parse(this.input);
     const isArray = Array.isArray(input);
     let result = null; 
 
     if (isArray) {
-      result = null;
+      result = this.moveArray(input);
     } else {
       result = null;
     }
 
+  }
+
+  moveArray(input) {
+    const pathToEdit = this.pathToEdit.replace('./', '');
+    const keys = Object.keys(pathToEdit);
+
+    /*saving the object to move */
+    const objs = getEachObject(input, keys);
+
+    /*deleting the object from ech object */
+
+    /*writing saved objects to the input json */
+
+    console.log(pathToEdit);
+  }
+
+  /**Geting an array of the object to be moved */
+  getEachObject(input: any, keys: string[]) {
+    const objs: string[] = [];
+    input.forEach((obj, index) => {
+      const obj = getObj(obj, keys);
+      objs.push(obj);
+    })
+
+    return objs;
   }
 
 }

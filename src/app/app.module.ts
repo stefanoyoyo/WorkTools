@@ -9,6 +9,7 @@ import { JsonEditorComponent } from '../json-editor/json-editor.component';
 import { ObjectAdderComponent } from './object-adder/object-adder.component';
 import { ObjectEditorComponent } from './object-editor/object-editor.component';
 import { ObjectDeleterComponent } from './object-deleter/object-deleter.component';
+import { ObjectMoveComponent } from './object-move/object-move.component';
 
 @NgModule({
   imports:      [ BrowserModule, FormsModule ],
@@ -19,7 +20,8 @@ import { ObjectDeleterComponent } from './object-deleter/object-deleter.componen
     JsonEditorComponent, 
     ObjectAdderComponent, 
     ObjectEditorComponent,
-    ObjectDeleterComponent
+    ObjectDeleterComponent,
+    ObjectMoveComponent
   ],
   bootstrap:    [ AppComponent ]
 })

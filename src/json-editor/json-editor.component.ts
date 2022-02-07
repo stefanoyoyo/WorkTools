@@ -12,6 +12,7 @@ export class JsonEditorComponent implements OnInit {
     'Add to each objects',
     'Edit from each objects',
     'Delete from each objects',
+    'Move from each objects',
   ];
 
   input = '';

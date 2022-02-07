@@ -7,6 +7,7 @@ import { HelloComponent } from './hello.component';
 import { JsonDynamicTableComponent } from '../json-dynamic-table/json-dynamic-table.component';
 import { JsonEditorComponent } from '../json-editor/json-editor.component';
 import { ObjectAdderComponent } from './object-adder/object-adder.component';
+import { ObjectEditorComponent } from './object-editor/object-editor.component';
 
 @NgModule({
   imports:      [ BrowserModule, FormsModule ],
@@ -15,7 +16,8 @@ import { ObjectAdderComponent } from './object-adder/object-adder.component';
     HelloComponent, 
     JsonDynamicTableComponent, 
     JsonEditorComponent, 
-    ObjectAdderComponent 
+    ObjectAdderComponent, 
+    ObjectEditorComponent
   ],
   bootstrap:    [ AppComponent ]
 })

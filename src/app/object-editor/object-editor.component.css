@@ -9,3 +9,7 @@ div.edit {
   justify-content: space-between;
   margin: 3px;
 }
+
+input {
+  width: 70%;
+}

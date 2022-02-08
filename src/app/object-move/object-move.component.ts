@@ -46,8 +46,9 @@ export class ObjectMoveComponent implements OnInit {
 
     /*writing saved objects to the input json */
     const result = this.writeObjects(removed, objs)
-
     console.log(result);
+
+    return result;
   }
 
   // #region get objects

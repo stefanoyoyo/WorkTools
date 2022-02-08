@@ -30,7 +30,7 @@ export class ObjectMoveComponent implements OnInit {
 
   }
 
-  moveArray(input) {
+  moveArray(input: object | object[]) {
     const pathToEdit = this.pathToEdit.replace('./', '');
     const keys = pathToEdit.split('.');
 

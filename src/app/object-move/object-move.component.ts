@@ -100,19 +100,13 @@ export class ObjectMoveComponent implements OnInit {
     const resultPath = this.changeToApply.replace('./', '')
     const keys = resultPath.split('.');
 
-    // getting last key which is the name of the path to add
+    // getting last key which is the name of the path to add.
     const lastkey = this.getLastKey();
 
-    // ocrreggere! adesso scrive al primo livello dell'oggetto
+    // writing the moved object to the defined levels.
     for(let index = 0; index < removed.length; index++) {
       let level = removed[index];
-      let leaf = null;
-      if (keys != null) {
-        keys.forEach((key) => {
-          level = level[key];
-        })
-      } 
-      console.log(`leaf ${leaf}`);
+      level = this.getWriteObject(keys, level);
       level[lastkey] = objs[index];
     }
 
@@ -120,7 +114,20 @@ export class ObjectMoveComponent implements OnInit {
     console.log(removed)
   }
 
+  /**Getting the object where the object to move will be written */
+  getWriteObject(keys: string[], level: object): object {
+    if (keys != null) {
+      keys.forEach((key) => {
+        // when key is not part of object, it is added.
+        if (level[key] == null) {
+          level[key] = {};
+        }
+        level = level[key];
+      })
+    } 
 
+    return level;
+  }
 
   // #endregion
 

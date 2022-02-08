@@ -19,6 +19,7 @@ export class ObjectMoveComponent implements OnInit {
 
   ngOnInit() {
   }
+
   onKeyUp() {
     const input = JSON.parse(this.input);
     const isArray = Array.isArray(input);
@@ -26,6 +27,7 @@ export class ObjectMoveComponent implements OnInit {
 
     if (isArray) {
       result = this.moveArray(input);
+      this.result = JSON.stringify(result, null, 2);
     } else {
       result = null;
     }
@@ -44,7 +46,6 @@ export class ObjectMoveComponent implements OnInit {
 
     /*writing saved objects to the input json */
     const result = this.writeObjects(removed, objs)
-    this.result = JSON.stringify(result, null, 2);
 
     console.log(result);
   }

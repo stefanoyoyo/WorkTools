@@ -100,19 +100,24 @@ export class ObjectMoveComponent implements OnInit {
     const resultPath = this.changeToApply.replace('./', '')
     const keys = resultPath.split('.');
 
+    // removing last element 
+    keys.pop();
+
     // getting last key which is the name of the path to add
     const lastkey = this.getLastKey();
 
     // ocrreggere! adesso scrive al primo livello dell'oggetto
-    // removed.forEach((obj, index) => {
-    //   if (keys != null) {
-    //     keys.forEach((key, ind) => {
-    //       if (ind < keys.length) {
-    //         obj[lastkey] = objs[index];
-    //       }
-    //     })
-    //   } 
-    // })
+    for(let index = 0; index < removed.length; index++) {
+      let level = removed[index];
+      let leaf = null;
+      if (keys != null) {
+        keys.forEach((key) => {
+          level = level[key];
+        })
+      } 
+      console.log(`leaf ${leaf}`);
+      level[lastkey] = objs[index];
+    }
 
     console.log('removed')
     console.log(removed)

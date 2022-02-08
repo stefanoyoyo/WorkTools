@@ -26,7 +26,6 @@ export class JsonEditorComponent implements OnInit {
 
   onKey(event) {
     this.jsonValue = JSON.parse(this.input);
-    console.log(this.jsonValue)
   }
 
 }

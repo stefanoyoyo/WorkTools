@@ -15,7 +15,6 @@ export class AppComponent  {
   ];
 
   onSel(event) {
-    console.log(event)
     this.selFunct = event;
   }
 

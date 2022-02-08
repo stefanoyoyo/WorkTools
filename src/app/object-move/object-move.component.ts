@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { ObjectUnsubscribedError } from 'rxjs';
 
 @Component({
@@ -9,6 +9,8 @@ import { ObjectUnsubscribedError } from 'rxjs';
 export class ObjectMoveComponent implements OnInit {
 
   @Input() input = '';
+
+  result = ''; 
 
   pathToEdit = './';
   changeToApply = './';
@@ -42,8 +44,9 @@ export class ObjectMoveComponent implements OnInit {
 
     /*writing saved objects to the input json */
     const result = this.writeObjects(removed, objs)
+    this.result = JSON.stringify(result, null, 2);
 
-    console.log(pathToEdit);
+    console.log(result);
   }
 
   // #region get objects
@@ -110,8 +113,7 @@ export class ObjectMoveComponent implements OnInit {
       level[lastkey] = objs[index];
     }
 
-    console.log('removed')
-    console.log(removed)
+    return removed;
   }
 
   /**Getting the object where the object to move will be written */

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-json-editor',
@@ -6,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./json-editor.component.css']
 })
 export class JsonEditorComponent implements OnInit {
+
+  sub: Subscription;
 
   choosenOption = -1;
   options = [
@@ -22,6 +25,7 @@ export class JsonEditorComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+    
   }
 
   onKey(event) {

@@ -100,9 +100,6 @@ export class ObjectMoveComponent implements OnInit {
     const resultPath = this.changeToApply.replace('./', '')
     const keys = resultPath.split('.');
 
-    // removing last element 
-    keys.pop();
-
     // getting last key which is the name of the path to add
     const lastkey = this.getLastKey();
 

@@ -32,4 +32,9 @@ export class JsonEditorComponent implements OnInit {
     this.jsonValue = JSON.parse(this.input);
   }
 
+  
+  onSel(event) {
+    this.choosenOption = event;
+  }
+
 }

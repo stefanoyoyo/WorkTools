@@ -21,8 +21,8 @@
   <tr *ngFor="let column of this.jsonValue">
     <td>{{column['field']}}</td>
     <td>
-      <span *ngIf="column['description'] != null && column['description'] != ''">{{column['description']}}</span>
-      <span class="alert" *ngIf="column['description'] == null || column['description'] == ''">{{noDescr}}</span>
+      <span *ngIf="column['meta'] != null && column['meta']['description'] != ''">{{column['meta']['description']}}</span>
+      <span class="alert" *ngIf="column['meta'] == null || column['meta']['description'] == ''">{{noDescr}}</span>
     </td>
   </tr>
 

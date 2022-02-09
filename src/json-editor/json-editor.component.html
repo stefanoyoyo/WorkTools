@@ -2,7 +2,7 @@
 
 <div id="options" *ngFor="let options of this.options; let i = index;">
   <input type="radio" [value]="i" [(ngModel)]="choosenOption" />
-  <label>{{options}}</label>
+  <label (click)="onSel(i)">{{options}}</label>
 </div>
 
 <p>Json array describing the table's columns</p>

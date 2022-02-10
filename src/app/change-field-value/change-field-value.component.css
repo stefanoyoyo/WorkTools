@@ -1,0 +1,18 @@
+div.change-name, .change-to-apply {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin: 3px;
+  height: 1em;
+  padding: 5px;
+}
+
+input {
+  width: 70%;
+  height: 1em;
+}
+
+#to-change {
+  align-items: center;
+}

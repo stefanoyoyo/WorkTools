@@ -1,0 +1,9 @@
+<div class="change-name">
+  <h6>Field to change</h6>
+  <input id="to-change" type="text" [(ngModel)]="pathToDelete">
+</div>
+
+<div class="change-to-apply">
+<h6>Change to apply</h6>
+<input type="text" [(ngModel)]="changeToApply" (keyup)="onKeyUp()">
+</div>

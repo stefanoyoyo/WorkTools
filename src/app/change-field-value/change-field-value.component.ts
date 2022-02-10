@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-change-field-value',
@@ -7,9 +7,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ChangeFieldValueComponent implements OnInit {
 
+  @Input() input = '';
+
+  pathToDelete = '';
+  changeToApply = '';
+
   constructor() { }
 
   ngOnInit() {
   }
 
+  onKeyUp() {
+
+  }
 }

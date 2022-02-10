@@ -10,6 +10,7 @@ import { ObjectAdderComponent } from './object-adder/object-adder.component';
 import { ObjectEditorComponent } from './object-editor/object-editor.component';
 import { ObjectDeleterComponent } from './object-deleter/object-deleter.component';
 import { ObjectMoveComponent } from './object-move/object-move.component';
+import { ChangeFieldValueComponent } from './change-field-value/change-field-value.component';
 
 @NgModule({
   imports:      [ BrowserModule, FormsModule ],
@@ -21,7 +22,8 @@ import { ObjectMoveComponent } from './object-move/object-move.component';
     ObjectAdderComponent, 
     ObjectEditorComponent,
     ObjectDeleterComponent,
-    ObjectMoveComponent
+    ObjectMoveComponent,
+    ChangeFieldValueComponent
   ],
   bootstrap:    [ AppComponent ]
 })

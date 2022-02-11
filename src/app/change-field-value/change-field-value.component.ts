@@ -36,15 +36,14 @@ export class ChangeFieldValueComponent implements OnInit {
 
   // #region uuuids
 
+  /*
+    conto nella stringa il numero di valori da sostituire.
+    genero lo stesos numero di valori che li andranno a sostituire.
+    li sostituisco.
+  */
   writeAllValues() {
-    /*
-      conto nella stringa il numero di valori da sostituire.
-      genero lo stesos numero di valori che li andranno a sostituire.
-      li sostituisco.
-     */
-    const numOccurrences = -1;
+    const numOccurrences = 1;
     const uuuids: string[] =  this.getSubstituteValues(numOccurrences);
-    console.log(uuuids) 
     const output = this.replaceValues(uuuids);
     return output;
   }
@@ -57,11 +56,15 @@ export class ChangeFieldValueComponent implements OnInit {
   /**Ottengo i valori da rimpiazzare al posto dei valori vecchi */
   getSubstituteValues(numOccurrences) {
     let values = [];
+    console.log('this.selectedValue') 
+    console.log(this.selectedValue) // arrivo fino a qui 
     switch(this.selectedValue) {
       case 1: 
-      values  = this.getUUUids(numOccurrences);
-      break;
+        console.log('fire') // NON entro qui! 
+        values  = this.getUUUids(numOccurrences);
+        break;
     }
+
     return values;
   }
 

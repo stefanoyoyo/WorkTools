@@ -30,3 +30,8 @@ div.change-to-apply-sub {
 select {
   width: 45%;
 }
+
+textarea {
+  margin-top: -1.5em;
+  width: 100%;
+}

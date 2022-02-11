@@ -8,10 +8,14 @@
 
   <div class="change-to-apply-sub">
     <input id="in" type="text" [(ngModel)]="changeToApply" (keyup)="onKeyUp()">
-    <select name="special-commands" id="special-commands">
-      <option value="1">1</option>
-      <option value="2">2</option>
+    <select [(ngModel)]="selectedValue" (change)="onSelectChange()" id="special-commands">
+      <option *ngFor="let opt of options; let i = index;" [value]="i">{{opt}}</option>
     </select>  
   </div>
 
+</div>
+
+<div class="output">
+  <h6>Output json</h6>
+  <textarea id="changed-fiels" cols="30" rows="10">{{this.output}}</textarea>
 </div>

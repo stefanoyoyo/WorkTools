@@ -55,9 +55,10 @@ export class ChangeFieldValueComponent implements OnInit {
 
   /**Ottengo i valori da rimpiazzare al posto dei valori vecchi */
   getSubstituteValues(numOccurrences) {
-    let values = [];
+    let values: string[] = [];
     console.log('this.selectedValue') 
     console.log(this.selectedValue) // arrivo fino a qui 
+    // Qui c'è un problema
     switch(this.selectedValue) {
       case 1: 
         console.log('fire') // NON entro qui! 

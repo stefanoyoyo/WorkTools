@@ -1,3 +1,4 @@
+import { ɵHttpInterceptingHandler } from '@angular/common/http';
 import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
@@ -9,7 +10,7 @@ export class ChangeFieldValueComponent implements OnInit {
 
   @Input() input = '';
 
-  pathToDelete = '';
+  fieldToChange = '';
   changeToApply = '';
   selectedValue = -1;
 
@@ -42,7 +43,7 @@ export class ChangeFieldValueComponent implements OnInit {
     li sostituisco.
   */
   writeAllValues() {
-    const numOccurrences = 1;
+    const numOccurrences = this.substringOccurrencesNumber(this.input, this.fieldToChange);
     const uuuids: string[] =  this.getSubstituteValues(numOccurrences);
     const output = this.replaceValues(uuuids);
     return output;
@@ -54,17 +55,20 @@ export class ChangeFieldValueComponent implements OnInit {
   }
 
   /**Ottengo i valori da rimpiazzare al posto dei valori vecchi */
-  getSubstituteValues(numOccurrences) {
+  getSubstituteValues(numOccurrences: number) {
     let values: string[] = [];
-    console.log('this.selectedValue') 
-    console.log(this.selectedValue) // arrivo fino a qui 
-    // Qui c'è un problema
-    switch(this.selectedValue) {
-      case 1: 
-        console.log('fire') // NON entro qui! 
-        values  = this.getUUUids(numOccurrences);
-        break;
-    }
+
+    /* PER MOTIVI IGNOTI, NON FUNZIONA! CAPIRE PERCHE! */
+    /* SENZA QUESTO SWITCH NON POSSO PERMETTERE AL COMPONENTE DI 
+       SOSTITUIRE IN PIU' MODI IL VALORE  */
+    // switch(this.selectedValue) {
+    //   case 1: 
+    //     console.log('fire') // NON entro qui! 
+    //     values  = this.getUUUids(numOccurrences);
+    //     break;
+    // }
+
+    values  = this.getUUUids(numOccurrences);
 
     return values;
   }
@@ -94,6 +98,21 @@ export class ChangeFieldValueComponent implements OnInit {
         return (c === 'x' ? r : (r & 0x3 | 0x8)).toString(16);
     });
 }
+
+  // #endregion
+
+  // #region string ɵHttpInterceptingHandler
+
+    /**Metodo che ritorna il numero di volte che una sottostringa è contneuta in una stringa 
+   * @param word contente le sottostringhe da contare
+   * @param subword sottostringa da contare
+   */
+  substringOccurrencesNumber(word, subword) {
+    let num = -1;
+    const arr = word.split(subword);
+    num = arr.length - 1;
+    return num;
+  }
 
   // #endregion
 

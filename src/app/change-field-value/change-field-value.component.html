@@ -4,6 +4,14 @@
 </div>
 
 <div class="change-to-apply">
-<h6>Change to apply</h6>
-<input type="text" [(ngModel)]="changeToApply" (keyup)="onKeyUp()">
+  <h6>Change to apply</h6>
+
+  <div class="change-to-apply-sub">
+    <input id="in" type="text" [(ngModel)]="changeToApply" (keyup)="onKeyUp()">
+    <select name="special-commands" id="special-commands">
+      <option value="1">1</option>
+      <option value="2">2</option>
+    </select>  
+  </div>
+
 </div>

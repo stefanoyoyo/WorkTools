@@ -16,3 +16,17 @@ input {
 #to-change {
   align-items: center;
 }
+
+#in {
+  width: 50%;
+}
+
+div.change-to-apply-sub {
+  display: flex;
+  justify-content: space-between;
+  width: 71%;
+}
+
+select {
+  width: 45%;
+}

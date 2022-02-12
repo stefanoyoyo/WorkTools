@@ -138,6 +138,7 @@ export class ChangeFieldValueComponent implements OnInit {
 
   // #endregion
 
+  
   /**Ottengo i valori da rimpiazzare al posto dei valori vecchi */
   getSubstituteValues(numOccurrences: number) {
     let values: string[] = [];

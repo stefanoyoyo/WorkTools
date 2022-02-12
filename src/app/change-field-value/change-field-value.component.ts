@@ -49,6 +49,8 @@ export class ChangeFieldValueComponent implements OnInit {
     return output;
   }
 
+  // #region replace values of a json string of a specified field name
+
   /**Method replacing the old field values of the specified json string
    *  with the new specified values. 
    * This method's working is based on the fact that 
@@ -57,21 +59,28 @@ export class ChangeFieldValueComponent implements OnInit {
    * must be substitued by parsing the input string, is 
    * possibile to apply a sostitution for each of those 
    * words with any other word.
+   * @param input input json string containing the valeus to replace at the specified field name
+   * @param fieldToChange name of the field to change
+   * @param uuuids string array containg the values which will be placed instead of the old values
   */
   replaceValues(input: string, fieldToChange: string, uuuids: string[]) {
     const toSubstitue: string[] = this.getTobeSubstitued(input, fieldToChange);
     toSubstitue.forEach((sobstitute, index) => {
       this.input = this.input.replace(sobstitute, uuuids[index])
-    })
-
-    console.log('this.input')
-    console.log(this.input)
+    });
   }
 
   
   // #region get values to be substituted
 
-  /**Method getting all the values that will be replaced into the string */
+  /**Method getting all the values that will be replaced into the string 
+   * @param input input json string containing the valeus to replace at the specified field name
+   * @param fieldToChange name of the field to change
+   * EXAMPLE: 
+   * input = {"id": "ciao", "bla" : {  "id" : "33"}}
+   * fieldToChange = "id"
+   * var result = ["ciao", "33"]
+  */
   getTobeSubstitued(input: string, fieldToChange: string): string[] {
     let index = -1; 
     const toBeSubstituted: string[] = [];
@@ -87,7 +96,14 @@ export class ChangeFieldValueComponent implements OnInit {
     return toBeSubstituted;
   }
   
-  /**Getting the field value given the first '"' field's char.AGGIUNGERE AGLI HELPERS */
+  /**Getting the field value given the first '"' field's char.AGGIUNGERE AGLI HELPERS 
+   * @param input input json string containing the value of the field name to get
+   * @param fieldIndex first '"" character index of the field having the value to get
+   * EXAMPLE: 
+   * input = {"id": "ciao", "bla" : {  "id" : "33"}}
+   * fieldIndex = 2 (ie, '"' in "id")
+   * var result = "ciao"
+  */
   getObjByIndex(input: string, fieldIndex: number): string {
 
     // moving out of the fiels index of '"'
@@ -118,6 +134,8 @@ export class ChangeFieldValueComponent implements OnInit {
   getWordByIndexes(input: string,start: number,end: number) {
     return input.substring(start, end)
   }
+
+  // #endregion
 
   // #endregion
 

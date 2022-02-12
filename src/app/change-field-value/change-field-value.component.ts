@@ -45,41 +45,49 @@ export class ChangeFieldValueComponent implements OnInit {
   writeAllValues() {
     const numOccurrences = this.substringOccurrencesNumber(this.input, this.fieldToChange);
     const uuuids: string[] =  this.getSubstituteValues(numOccurrences);
-    const output = this.replaceValues(uuuids);
+    const output = this.replaceValues(this.input, this.fieldToChange, uuuids);
     return output;
   }
 
-  /**Rimpiazzo i valori vecchi con quelli specificati come parametro  */
-  replaceValues(uuuids: string[]) {
-    
-    // Sapendo che il metodo replace in JavaScript sostituisce solo la prima occorrenza
-    // ottengo il valore di ogni campo, lo salvo in un array, e per ognuno di quei valori 
-    // poi applico una sostituzione con ciò che voglio. 
-    const toSubstitue: string[] = this.getTobeSubstitued();
-    // console.log('toSubstitue')
-    // console.log(toSubstitue)
+  /**Method replacing the old field values of the specified json string
+   *  with the new specified values. 
+   * This method's working is based on the fact that 
+   * JavaScript's replace method only substitutes the 
+   * first occurence. Getting an array of the values that 
+   * must be substitued by parsing the input string, is 
+   * possibile to apply a sostitution for each of those 
+   * words with any other word.
+  */
+  replaceValues(input: string, fieldToChange: string, uuuids: string[]) {
+    const toSubstitue: string[] = this.getTobeSubstitued(input, fieldToChange);
+    toSubstitue.forEach((sobstitute, index) => {
+      this.input = this.input.replace(sobstitute, uuuids[index])
+    })
+
+    console.log('this.input')
+    console.log(this.input)
   }
 
   
   // #region get values to be substituted
 
   /**Method getting all the values that will be replaced into the string */
-  getTobeSubstitued(): string[] {
+  getTobeSubstitued(input: string, fieldToChange: string): string[] {
     let index = -1; 
     const toBeSubstituted: string[] = [];
-    const substrCount = this.substringOccurrencesNumber(this.input, this.fieldToChange);
+    const substrCount = this.substringOccurrencesNumber(input, fieldToChange);
     for(let i = 0; i<substrCount; i++) {
       index = i+1;
-      const fieldIndex = this.getSubstringPosition(this.input, this.fieldToChange, index);
-      console.log(fieldIndex)
-      const word: string = this.getObjByIndex(this.input, fieldIndex);
+      const fieldIndex = this.getSubstringPosition(input, fieldToChange, index);
+      const wordApexes: string = this.getObjByIndex(input, fieldIndex);
+      const word = wordApexes.substring(1, wordApexes.length-1);
       toBeSubstituted.push(word);
     }
 
     return toBeSubstituted;
   }
   
-  /**Getting the field value given the first '"' field's char. */
+  /**Getting the field value given the first '"' field's char.AGGIUNGERE AGLI HELPERS */
   getObjByIndex(input: string, fieldIndex: number): string {
 
     // moving out of the fiels index of '"'
@@ -91,34 +99,25 @@ export class ChangeFieldValueComponent implements OnInit {
     }
     const start = fieldIndex;
 
+    // Moving to the index next to '"'
+    fieldIndex+= 1;
+
     // looking for the final index
     while (input[fieldIndex] !== '"') {
       ++fieldIndex;
     }
-    const end = fieldIndex-2;
+
+    const end = fieldIndex+1;
 
     // getting the word between initial and final indexes
     const word = this.getWordByIndexes(this.input, start, end);
-    console.log('word')
-    console.log(word)
     return word;
   }
   
-  /**Method getting the subword included between the given indexes */
+  /**Method getting the subword included between the given indexes AGGIUNGERE AGLI HELPERS */
   getWordByIndexes(input: string,start: number,end: number) {
-    const noLeftPart = this.splitAtIndex(input, start)[1];
-    const noRightPart =  this.splitAtIndex(noLeftPart, end)[0];
-    return noRightPart;
+    return input.substring(start, end)
   }
-
-  /**Metodo che splitta la stringa passata come parametro all'indice passato come parametro */
-  splitAtIndex(value, index) {
-    const arr = [];
-    arr.push(value.substring(0, index));
-    arr.push(value.substring(index));
-    return arr;
-  }
-    
 
   // #endregion
 

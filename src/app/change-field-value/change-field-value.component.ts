@@ -71,6 +71,8 @@ export class ChangeFieldValueComponent implements OnInit {
    */
   replaceValues(input: string, fieldToChange: string, uuuids: string[]) {
     const toSubstitue: string[] = this.getTobeSubstitued(input, fieldToChange);
+    console.log('toSubstitue')
+    console.log(toSubstitue)
     toSubstitue.forEach((sobstitute, index) => {
       input = input.replace(sobstitute, uuuids[index]);
     });
@@ -90,7 +92,7 @@ export class ChangeFieldValueComponent implements OnInit {
   getTobeSubstitued(input: string, fieldToChange: string): string[] {
     let index = -1;
     const toBeSubstituted: string[] = [];
-    const substrCount = this.substringOccurrencesNumber(input, fieldToChange);
+    const substrCount = this.substringOccurrencesNumber(input, `"${fieldToChange}"`);
     for (let i = 0; i < substrCount; i++) {
       index = i + 1;
       const fieldIndex = this.getSubstringPosition(input, fieldToChange, index);

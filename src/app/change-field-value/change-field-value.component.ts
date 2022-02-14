@@ -95,7 +95,7 @@ export class ChangeFieldValueComponent implements OnInit {
     const substrCount = this.substringOccurrencesNumber(input, `"${fieldToChange}"`);
     for (let i = 0; i < substrCount; i++) {
       index = i + 1;
-      const fieldIndex = this.getSubstringPosition(input, fieldToChange, index);
+      const fieldIndex = this.getSubstringPosition(input, `"${fieldToChange}"`, index);
       const wordApexes: string = this.getObjByIndex(input, fieldIndex);
       const word = wordApexes.substring(1, wordApexes.length - 1);
       toBeSubstituted.push(word);

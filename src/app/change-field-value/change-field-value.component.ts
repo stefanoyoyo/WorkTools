@@ -6,6 +6,12 @@ import { Component, Input, OnInit } from '@angular/core';
   templateUrl: './change-field-value.component.html',
   styleUrls: ['./change-field-value.component.css'],
 })
+
+/**
+ * KNOWN BUGS: 
+ *  •  When a number follows the number field, it is not changed
+ *  •  when a field name is followes by an empty string, it is not modifieed
+ */
 export class ChangeFieldValueComponent implements OnInit {
   @Input() input = '';
 

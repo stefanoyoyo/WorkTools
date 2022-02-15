@@ -11,7 +11,8 @@ export class AppComponent  {
   selFunct = -1;
   functions = [ 
     'Dynamic table based on JSON', 
-    "Json editor"
+    "Json editor",
+    "Time calculator"
   ];
 
   onSel(event) {

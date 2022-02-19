@@ -9,6 +9,10 @@ export class ObjectAdderComponent implements OnInit {
 
   @Input() input;
 
+  pathToEdit = './';
+  
+  fieldValues = '';
+
   constructor() { }
 
   ngOnInit() {

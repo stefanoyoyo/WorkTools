@@ -13,3 +13,11 @@ div.edit {
 input {
   width: 70%;
 }
+
+h6 {
+  background-color: red;
+}
+
+h6::after {
+  content: " (incomplete)";
+}

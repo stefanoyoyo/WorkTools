@@ -33,22 +33,31 @@ export class ObjectAdderComponent implements OnInit {
 
     const nameToAdd = this.pathToEdit.replace('./', '') 
     let inputValues = JSON.parse(this.input);
-    const fieldValues = JSON.parse(this.fieldValues);
-    const added = this.addValues(nameToAdd, inputValues, fieldValues );
-    console.log('added')
-    console.log(added)
+
+    const fieldValues = this.isValuesArray() ? JSON.parse(this.fieldValues) : this.fieldValues ;
+
+    /*When input is an array, its values are added to the input. Else, a single value is added to al the objects */
+    const added = Array.isArray(fieldValues) ? this.addValues(nameToAdd, inputValues, fieldValues) : this.addValue(nameToAdd, inputValues, fieldValues);
+
+    /*Showing the result in output */
+    this.result = JSON.stringify(added, null, 2);
 
   }
 
+/**Method adding a single value to all the objects */
+addValue(nameToAdd: string, inputValues: object[], fieldValue: object) {
+  for(let i = 0; i < inputValues.length; i++) {
+    inputValues[i][nameToAdd] = fieldValue != null ? fieldValue : '';  
+  }
+  return inputValues;
+}
+
 /**Method adding the specified values to the output json */
 addValues(nameToAdd: string, inputValues: object[], fieldValues: object[]){
-  if (!this.isValuesArray()) { return null; }
-  console.log(fieldValues)
   for(let i = 0; i < inputValues.length; i++) {
     const value = fieldValues[i];
     inputValues[i][nameToAdd] = i <= fieldValues.length ? value : '';  
   }
-
   return inputValues;
 }
 

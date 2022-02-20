@@ -7,6 +7,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TimeCalculatorComponent implements OnInit {
 
+  left = '';
+  right = '';
+
+  result = '';
+
   constructor() { }
 
   ngOnInit() {

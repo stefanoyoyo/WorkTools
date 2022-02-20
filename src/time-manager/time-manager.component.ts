@@ -1,11 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-time-calculator',
-  templateUrl: './time-calculator.component.html',
-  styleUrls: ['./time-calculator.component.css']
+  selector: 'app-time-manager',
+  templateUrl: './time-manager.component.html',
+  styleUrls: ['./time-manager.component.css']
 })
-export class TimeCalculatorComponent implements OnInit {
+export class TimeManagerComponent implements OnInit {
 
   choosenOption = -1;
   options = [

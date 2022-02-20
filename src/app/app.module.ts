@@ -11,7 +11,7 @@ import { ObjectEditorComponent } from './object-editor/object-editor.component';
 import { ObjectDeleterComponent } from './object-deleter/object-deleter.component';
 import { ObjectMoveComponent } from './object-move/object-move.component';
 import { ChangeFieldValueComponent } from './change-field-value/change-field-value.component';
-import { TimeCalculatorComponent } from '../time-calculator/time-calculator.component';
+import { TimeManagerComponent } from '../time-manager/time-manager.component';
 
 @NgModule({
   imports:      [ BrowserModule, FormsModule ],
@@ -25,7 +25,7 @@ import { TimeCalculatorComponent } from '../time-calculator/time-calculator.comp
     ObjectDeleterComponent,
     ObjectMoveComponent,
     ChangeFieldValueComponent,
-    TimeCalculatorComponent
+    TimeManagerComponent
   ],
   bootstrap:    [ AppComponent ]
 })

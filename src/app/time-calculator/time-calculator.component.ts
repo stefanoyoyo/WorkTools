@@ -17,4 +17,7 @@ export class TimeCalculatorComponent implements OnInit {
   ngOnInit() {
   }
 
+  onKeyUp() {
+
+  }
 }

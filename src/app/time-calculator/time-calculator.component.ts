@@ -9,6 +9,7 @@ export class TimeCalculatorComponent implements OnInit {
 
   left = '';
   right = '';
+  decimals='';
 
   result = '';
 
@@ -18,11 +19,11 @@ export class TimeCalculatorComponent implements OnInit {
   }
 
   onKeyUp() {
-
+    const result = this.generateDecimalSeries(this.left, this.right, this.decimals);
+    this.result = result.toString();
   }
 
- // #region code
-
+// #region code
 
 /**Generating all the decimal number between the specified extreemes.  */
 generateDecimalSeries(start, end, decimals) {

@@ -9,8 +9,14 @@
     <h6>Insert the initial time (left range)</h6>
     <input [(ngModel)]="right" />  
   </div>
+
+  <div class="row">
+    <h6>Insert the number of decimals</h6>
+    <input (keyup)="onKeyUp()" [(ngModel)]="decimals" />  
+  </div>
+
 </div>
 
 
-<h6 id="output">Output json</h6>
+<h6 id="output">Output</h6>
 <textarea id="in"  [(ngModel)]="result"></textarea>

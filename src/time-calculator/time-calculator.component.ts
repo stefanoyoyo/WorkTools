@@ -7,12 +7,21 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TimeCalculatorComponent implements OnInit {
 
+  choosenOption = -1;
+  options = [
+    'Add decimals at numbers in range'
+  ];
+
   constructor() { }
 
   ngOnInit() {
   }
 
-  // #region code
+// #region code
+
+onSel(event) {
+  this.choosenOption = event;
+}
 
 /**Generating all the decimal number between the specified extreemes.  */
 generateDecimalSeries(start, end, decimals) {

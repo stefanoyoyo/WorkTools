@@ -12,7 +12,7 @@ export class AppComponent  {
   functions = [ 
     'Dynamic table based on JSON', 
     "Json editor",
-    "Time calculator"
+    "Date and time utilities"
   ];
 
   onSel(event) {

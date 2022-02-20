@@ -1,1 +1,7 @@
-ciao 
+<p>Here are some date and time utilities</p>
+
+<div id="options" *ngFor="let options of this.options; let i = index;">
+  <input type="radio" [value]="i" [(ngModel)]="choosenOption" />
+  <label (click)="onSel(i)">{{options}}</label>
+</div>
+

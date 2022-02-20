@@ -1,8 +1,8 @@
 <p>Here are some date and time utilities</p>
 
 <div id="options" *ngFor="let options of this.options; let i = index;">
-  <input type="radio" [value]="i" [(ngModel)]="choosenOption" />
+  <input type="radio" [value]="i" [(ngModel)]="i" />
   <label (click)="onSel(i)">{{options}}</label>
 </div>
 
-<app-time-calculator></app-time-calculator>
+<app-time-calculator *ngIf="this.choosenOption === 1"></app-time-calculator>

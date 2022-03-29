@@ -8,3 +8,6 @@ TODO: [×], [✓], [~], [→]
        ESEMPIO: ["#0020debe","#65b0c5be","#e79f30be","#7dfafa","#fa7d7d","#face7d","#7d7dfa","#c192ec"]
  • [×] tool per la conversione di un tipo colore in tutti gli altri 
        ESEMPIO: #00000 viene mostrato anche in rgba(0,0,0,0)
+ • [×] suddividere questo tool in sezioni: json (table, objects, strings), Date tools, Colors
+ • [×] 
+ • [×] 

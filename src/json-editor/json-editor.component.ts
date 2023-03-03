@@ -17,7 +17,8 @@ export class JsonEditorComponent implements OnInit {
     'Delete from each objects',
     'Move from each objects',
     'Change all field value',
-    'Extract JSON object leaves'
+    'Extract JSON object leaves',
+    'Replace JSON object leaves'
   ];
 
   input = '';

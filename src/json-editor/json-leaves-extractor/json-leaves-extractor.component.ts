@@ -23,6 +23,12 @@ export class JsonLeavesExtractorComponent implements OnInit {
   // #region events
 
   onKeyUp() {
+    console.log('ciaooo furew')
+    const asObj = JSON.parse(this.input);
+    console.log('asObj')
+    console.log(asObj)
+    const result = this.getLeaves(this.input);
+    this.result = JSON.stringify(result); 
   }
 
   // #endregion

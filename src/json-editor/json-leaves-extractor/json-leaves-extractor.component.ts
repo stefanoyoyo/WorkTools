@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { JsonLeavesService } from '../../app/services/json-leaves.service';
 
 @Component({
   selector: 'app-json-leaves-extractor',
@@ -6,13 +7,11 @@ import { Component, Input, OnInit } from '@angular/core';
   styleUrls: ['./json-leaves-extractor.component.css']
 })
 export class JsonLeavesExtractorComponent implements OnInit {
-
-  // @Input() input;
   _input:string;
   @Input() set input(param:string) {
     if (param === '') return; 
     const asObj = JSON.parse(param);
-    const result = this.getLeaves(asObj); 
+    const result = this.jsonLeaves.getLeaves(asObj); 
     console.log('result')
     console.log(result)
     this.result = JSON.stringify(result);
@@ -26,7 +25,7 @@ export class JsonLeavesExtractorComponent implements OnInit {
 
   result = '';
 
-  constructor() { }
+  constructor(private jsonLeaves: JsonLeavesService) { }
 
   ngOnInit() {
   }

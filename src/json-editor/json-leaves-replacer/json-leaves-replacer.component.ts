@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { JsonLeavesService } from '../../app/services/json-leaves.service';
 
 @Component({
   selector: 'app-json-leaves-replacer',

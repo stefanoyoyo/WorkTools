@@ -23,7 +23,7 @@ export class JsonLeavesExtractorComponent implements OnInit {
   // #region events
 
   onKeyUp() {
-    console.log('ciaooo furew')
+    console.log('TODO: controllare perchè NON VIENE CHIAMATO questo metodo')
     const asObj = JSON.parse(this.input);
     console.log('asObj')
     console.log(asObj)

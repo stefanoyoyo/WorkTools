@@ -13,6 +13,7 @@ import { ObjectMoveComponent } from './object-move/object-move.component';
 import { ChangeFieldValueComponent } from './change-field-value/change-field-value.component';
 import { TimeManagerComponent } from '../time-manager/time-manager.component';
 import { TimeCalculatorComponent } from './time-calculator/time-calculator.component';
+import { JsonLeavesExtractorComponent } from '../json-editor/json-leaves-extractor/json-leaves-extractor.component';
 
 @NgModule({
   imports:      [ BrowserModule, FormsModule ],
@@ -27,7 +28,8 @@ import { TimeCalculatorComponent } from './time-calculator/time-calculator.compo
     ObjectMoveComponent,
     ChangeFieldValueComponent,
     TimeManagerComponent,
-    TimeCalculatorComponent
+    TimeCalculatorComponent,
+    JsonLeavesExtractorComponent
   ],
   bootstrap:    [ AppComponent ]
 })

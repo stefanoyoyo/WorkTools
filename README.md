@@ -10,4 +10,5 @@ TODO: [×], [✓], [~], [→]
  • [×] tool per la conversione di un tipo colore in tutti gli altri 
        ESEMPIO: #00000 viene mostrato anche in rgba(0,0,0,0)
  • [×] suddividere questo tool in sezioni: json (table (doc mauro, html table as json), objects, strings), Date tools, Colors
+ • [×] strumento per estrarre tutte le foglie di un oggetto JSON e ritornarle come array
  • [×] 

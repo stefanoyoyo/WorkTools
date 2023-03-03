@@ -15,6 +15,7 @@ import { TimeManagerComponent } from '../time-manager/time-manager.component';
 import { TimeCalculatorComponent } from './time-calculator/time-calculator.component';
 import { JsonLeavesExtractorComponent } from '../json-editor/json-leaves-extractor/json-leaves-extractor.component';
 import { JsonLeavesService } from './services/json-leaves.service';
+import { JsonLeavesReplacerComponent } from '../json-editor/json-leaves-replacer/json-leaves-replacer.component';
 
 @NgModule({
   imports:      [ BrowserModule, FormsModule ],
@@ -30,7 +31,8 @@ import { JsonLeavesService } from './services/json-leaves.service';
     ChangeFieldValueComponent,
     TimeManagerComponent,
     TimeCalculatorComponent,
-    JsonLeavesExtractorComponent
+    JsonLeavesExtractorComponent,
+    JsonLeavesReplacerComponent
   ],
   bootstrap:    [ AppComponent ],
   providers: [

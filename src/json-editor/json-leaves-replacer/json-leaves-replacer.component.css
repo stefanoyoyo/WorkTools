@@ -3,7 +3,7 @@ div.edit {
   flex-direction: column;
 }
 
-.editpath, .change-to-apply, .values {
+.replacementLeaves, .change-to-apply, .values {
   display: flex;
   flex-direction: row;
   justify-content: space-between;

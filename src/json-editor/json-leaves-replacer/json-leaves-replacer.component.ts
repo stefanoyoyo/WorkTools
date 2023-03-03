@@ -18,6 +18,7 @@ export class JsonLeavesReplacerComponent implements OnInit {
     this._input = this.result;
   }
 
+  replacementLeaves: string[];
 
   pathToEdit = './';
 

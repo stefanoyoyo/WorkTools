@@ -7,7 +7,18 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class JsonLeavesExtractorComponent implements OnInit {
 
-  @Input() input;
+  // @Input() input;
+  _input:string;
+  @Input() set input(param:string) {
+    if (param === '') return; 
+    const asObj = JSON.parse(param);
+    const result = this.getLeaves(asObj); 
+    console.log('result')
+    console.log(result)
+    this.result = JSON.stringify(result);
+    this._input = this.result;
+  }
+
 
   pathToEdit = './';
 
@@ -19,19 +30,6 @@ export class JsonLeavesExtractorComponent implements OnInit {
 
   ngOnInit() {
   }
-
-  // #region events
-
-  onKeyUp() {
-    console.log('TODO: controllare perchè NON VIENE CHIAMATO questo metodo')
-    const asObj = JSON.parse(this.input);
-    console.log('asObj')
-    console.log(asObj)
-    const result = this.getLeaves(this.input);
-    this.result = JSON.stringify(result); 
-  }
-
-  // #endregion
 
   getLeaves(jsonObj) {
     let leaves = [];

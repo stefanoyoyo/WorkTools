@@ -15,6 +15,7 @@ export class JsonLeavesExtractorComponent implements OnInit {
     console.log('result')
     console.log(result)
     this.result = JSON.stringify(result);
+    navigator.clipboard.writeText(this.result);
     this._input = this.result;
   }
 
